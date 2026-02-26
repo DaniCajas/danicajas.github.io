@@ -3,83 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Prueba Todo-en-Uno</title>
+    <title>CV Daniel Montserrat Barceló</title>
     <style>
-        /* Aquí va todo el CSS */
+        :root {
+            --primary-blue: #1e3799; /* Azul profesional profundo */
+            --soft-gray: #f8f9fa;   /* Fondo de cabecera suave */
+            --text-main: #2d3436;   /* Gris oscuro para texto */
+            --text-light: #636e72;  /* Gris claro para detalles */
+            --border: #dcdde1;
+        }
+
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f1f2f6;
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #333;
         }
 
-        .card {
+        .container {
+            max-width: 850px;
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .icon-box {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            margin-top: 0;
-            color: #4a4a4a;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #666;
-        }
-
-        .status-badge {
-            display: inline-block;
-            background-color: #e2e8f0;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: #4a5568;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #764ba2;
-            color: white;
-            text-decoration: none;
             border-radius: 8px;
-            transition: transform 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
         }
 
-        .btn:hover {
-            transform: scale(1.05);
-            background-color: #5a377d;
+        /* Cabecera con contraste suave */
+        header {
+            background-color: var(--soft-gray);
+            padding: 50px 40px;
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Layout de dos columnas */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 40px;
+            gap: 50px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section { margin-bottom: 35px; }
+
+        .job-entry { margin-bottom: 20px; }
+        .job-title { font-weight: bold; color: #111; display: block; }
+        .job-date { color: var(--primary-blue); font-size: 0.85rem; font-weight: 600; }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skill-tag {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #cbd5e0;
+        }
+
+        ul { padding-left: 18px; margin-top: 8px; }
+        li { margin-bottom: 6px; color: var(--text-light); font-size: 0.95rem; }
+
+        @media (max-width: 700px) {
+            .main-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="icon-box">🚀</div>
-        <div class="status-badge">Archivo Único</div>
-        <h1>¡Funciona!</h1>
-        <p>Este es un ejemplo de <strong>CSS embebido</strong>. Todo lo que ves está dentro de un solo archivo .html.</p>
-        <p>Ideal para practicar tus primeros <em>commits</em> sin perder archivos por el camino.</p>
-        <a href="#" class="btn">¡Genial amigo!</a>
+<div class="container">
+    <header>
+        <h1>Daniel Montserrat Barceló</h1>
+        <div class="subtitle">Apasionado de la informática y las nuevas tecnologías</div>
+        <div class="location">Capçanes, Tarragona</div>
+    </header>
+
+    <div class="main-content">
+        <aside>
+            <div class="section">
+                <h2>Idiomas</h2>
+                <p><strong>Catalán:</strong> Nativo</p>
+                <p><strong>Español:</strong> Nativo</p>
+                <p><strong>Inglés:</strong> B2</p>
+            </div>
+
+            <div class="section">
+                <h2>Competencias</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Polivalente</span>
+                    <span class="skill-tag">Observador</span>
+                    <span class="skill-tag">Organizador</span>
+                    <span class="skill-tag">Comunicación</span>
+                    <span class="skill-tag">Creativo</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Otros Datos</h2>
+                <ul>
+                    <li>Microsoft Office Pack</li>
+                    <li>Carné de conducir</li>
+                    <li>Lenguaje musical</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <div class="section">
+                <h2>Experiencia Laboral</h2>
+                
+                <div class="job-entry">
+                    <span class="job-title">Formación en Electricidad</span>
+                    <span class="job-date">BASF-Alemania | 2024</span>
+                    <ul>
+                        <li>Especialización en metales, automatización e impresión 3D.</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-title">Reponedor</span>
+                    <span class="job-date">El Corte Inglés | 2023</span>
+                    <ul>
+                        <li>Atención al cliente, almacén y logística de reposición.</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-title">Organizador de Eventos</span>
+                    <span class="job-date">Quintos de Flix | 2022-2023</span>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-title">Hostelería (Negocio Familiar)</span>
+                    <span class="job-date">Bar Catalunya / Bestioles</span>
+                    <ul>
+                        <li>Gestión de negocios, ventas online y atención al público.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Formación Académica</h2>
+                <div class="job-entry">
+                    <span class="job-title">Bachillerato - Ciencias y Tecnología</span>
+                    <span class="job-date">Institut de Flix | 2020 - 2022</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Cursos Técnicos</h2>
+                <ul style="columns: 1;">
+                    <li>Atención al cliente y caja (150h).</li>
+                    <li>Montaje de carpintería (100h).</li>
+                    <li>Prevención de riesgos y Soporte Vital Básico.</li>
+                </ul>
+            </div>
+        </main>
     </div>
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Daniel Montserrat Barceló</title>
+    <style>
+        :root {
+            --primary-blue: #1e3799; /* Azul profesional profundo */
+            --soft-gray: #f8f9fa;   /* Fondo de cabecera suave */
+            --text-main: #2d3436;   /* Gris oscuro para texto */
+            --text-light: #636e72;  /* Gris claro para detalles */
+            --border: #dcdde1;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f1f2f6;
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 850px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        /* Cabecera con contraste suave */
+        header {
+            background-color: var(--soft-gray);
+            padding: 50px 40px;
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Layout de dos columnas */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 40px;
+            gap: 50px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section { margin-bottom: 35px; }
+
+        .job-entry { margin-bottom: 20px; }
+        .job-title { font-weight: bold; color: #111; display: block; }
+        .job-date { color: var(--primary-blue); font-size: 0.85rem; font-weight: 600; }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skill-tag {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #cbd5e0;
+        }
+
+        ul { padding-left: 18px; margin-top: 8px; }
+        li { margin-bottom: 6px; color: var(--text-light); font-size: 0.95rem; }
+
+        @media (max-width: 700px) {
+            .main-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Daniel Montserrat Barceló</h1>
+        <div class="subtitle">Apasionado de la informática y las nuevas tecnologías</div>
+        <div class="location">Capçanes, Tarragona</div>
+    </header>
+
+    <div class="main-content">
+        <aside>
+            <div class="section">
+                <h2>Idiomas</h2>
+                <p><strong>Catalán:</strong> Nativo</p>
+                <p><strong>Español:</strong> Nativo</p>
+                <p><strong>Inglés:</strong> B2</p>
+            </div>
+
+            <div class="section">
+                <h2>Competencias</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Polivalente</span>
+                    <span class="skill-tag">Observador</span>
+                    <span class="skill-tag">Organizador</span>
+                    <span class="skill-tag">Comunicación</span>
+                    <span class="skill-tag">Creativo</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Otros Datos</h2>
+                <ul>
+                    <li>Microsoft Office Pack</li>
+                    <li>Carné de conducir</li>
+                    <li>Lenguaje musical</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <div class="section">
+                <h2>Experiencia Laboral</h2>
+                
+                <div class="job-entry">
+                    <span class="job-title">Formación en Electricidad</span>
+                    <span class="job-date">BASF-Alemania | 2024</span>
+                    <ul>
+                        <li>Especialización en metales, automatización e impresión 3D.</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-title">Reponedor</span>
+                    <span class="job-date">El Corte Inglés | 2023</span>
+                    <ul>
+                        <li>Atención al cliente, almacén y logística de reposición.</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-title">Organizador de Eventos</span>
+                    <span class="job-date">Quintos de Flix | 2022-2023</span>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-title">Hostelería (Negocio Familiar)</span>
+                    <span class="job-date">Bar Catalunya / Bestioles</span>
+                    <ul>
+                        <li>Gestión de negocios, ventas online y atención al público.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Formación Académica</h2>
+                <div class="job-entry">
+                    <span class="job-title">Bachillerato - Ciencias y Tecnología</span>
+                    <span class="job-date">Institut de Flix | 2020 - 2022</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Cursos Técnicos</h2>
+                <ul style="columns: 1;">
+                    <li>Atención al cliente y caja (150h).</li>
+                    <li>Montaje de carpintería (100h).</li>
+                    <li>Prevención de riesgos y Soporte Vital Básico.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</div>
 
 </body>
 </html>
